@@ -30,6 +30,7 @@
 #include <random>
 #include <array>
 #include <map>
+#include <list>
 #include <unordered_map>
 #include <type_traits>
 
