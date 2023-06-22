@@ -24,6 +24,8 @@
 #ifndef SIMPLE_HPP_
 #define SIMPLE_HPP_ 1
 
+#pragma once
+
 // standard libraries
 #include <iostream>
 #include <vector>
@@ -37,10 +39,7 @@
 #define UNUSED __attribute__((unused)) auto
 
 namespace simple {
-	namespace numbers {
-		float randf(float min, float max);
-	}
-
+	float randf(float min, float max);
 	std::vector<std::string> split(std::string raw, std::string delimiter);
 
 	namespace pprint {
@@ -63,14 +62,12 @@ namespace simple {
 
 #ifndef SIMPLE_IMPLEMENTATION_
 namespace simple {
-	namespace numbers {
-		float randf(float min, float max) {
-			std::random_device random_device;
-			std::mt19937 random_engine{random_device()};
-			std::uniform_real_distribution<float> distribution(min, max);
+	float randf(float min, float max) {
+		std::random_device random_device;
+		std::mt19937 random_engine{random_device()};
+		std::uniform_real_distribution<float> distribution(min, max);
 
-			return distribution(random_engine);
-		}
+		return distribution(random_engine);
 	}
 
 	std::vector<std::string> split(std::string raw, std::string const& delimiter) {
